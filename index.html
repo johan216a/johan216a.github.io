@@ -1,13 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Page Title</title>
+<head> <meta charset="UTF-8">
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 90%; }
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px; }
+</style>
 </head>
 <body>
 
-<h1> Hejsan! </h1>
+Textfilter <input type="text" id="inp11" onkeyup="fn11()">
+<table id="tb00">    </table>
 
-<a href="#"> <img src="johan216a.github.io/smiley.png" alt="smiley"> </a>
+<script>
+var data00 = [];
+data00.push('<tr>  <td style="text-align: center;"> <img src="johan216a.github.io/img/ACureforWellness2016.jpg" style="width:35px;height:60px;"> </td>  <td> A Cure for Wellness (2016) <br> Gore Verbinski - Justin Haythe, Justin Haythe <br> Dane DeHaan, Jason Isaacs, Mia Goth </td>  </tr>');
+data00.push('<tr>  <td style="text-align: center;"> <img src="johan216a.github.io/img/FromPariswithLove2010.jpg" style="width:35px;height:60px;"> </td>  <td> From Paris with Love (2010) <br> Pierre Morel - Adi Hasak, Luc Besson <br> John Travolta, Jonathan Rhys Meyers, Kasia Smutniak </td>  </tr>');
+data00.push('<tr>  <td style="text-align: center;"> <img src="johan216a.github.io/img/Gold2016.jpg" style="width:35px;height:60px;"> </td>  <td> Gold (2016) <br> Stephen Gaghan - Patrick Massett, John Zinman <br> Matthew McConaughey, Edgar Ramírez, Bryce Dallas Howard </td>  </tr>');
+data00.push('<tr>  <td style="text-align: center;"> <img src="johan216a.github.io/img/JohnWickChapter22017.jpg" style="width:35px;height:60px;"> </td>  <td> John Wick: Chapter 2 (2017) <br> Chad Stahelski <br> Derek Kolstad, Derek Kolstad </td>  </tr>');
+data00.push('<tr>  <td style="text-align: center;"> <img src="johan216a.github.io/img/OnceUponaTimeinVenice2017.jpg" style="width:35px;height:60px;"> </td>  <td> Once Upon a Time in Venice (2017) <br> Mark Cullen <br> Mark Cullen, Robb Cullen </td>  </tr>');
+data00.push('<tr>  <td style="text-align: center;"> <img src="johan216a.github.io/img/PowerRangers2017.jpg" style="width:35px;height:60px;"> </td>  <td> Power Rangers (2017) <br> Dean Israelite <br> John Gatins, Matt Sazama </td>  </tr>');
+data00.push('<tr>  <td style="text-align: center;"> <img src="johan216a.github.io/img/Sleepless2017.jpg" style="width:35px;height:60px;"> </td>  <td> Sleepless (2017) <br> Baran bo Odar <br> Andrea Berloff, Frédéric Jardin </td>  </tr>');
+data00.push('<tr>  <td style="text-align: center;"> <img src="johan216a.github.io/img/TheFateoftheFurious2017.jpg" style="width:35px;height:60px;"> </td>  <td> The Fate of the Furious (2017) <br> F. Gary Gray <br> Chris Morgan, Gary Scott Thompson </td>  </tr>');
+data00.push('<tr>  <td style="text-align: center;"> <img src="johan216a.github.io/img/TheFounder2016.jpg" style="width:35px;height:60px;"> </td>  <td> The Founder (2016) <br> John Lee Hancock <br> Writer: Robert D. Siegel </td>  </tr>');
+data00.push('<tr>  <td style="text-align: center;"> <img src="johan216a.github.io/img/TheGreatWall2016.jpg" style="width:35px;height:60px;"> </td>  <td> The Great Wall (2016) <br> Yimou Zhang <br> Carlo Bernard, Doug Miro </td>  </tr>');
+data00.push('<tr>  <td style="text-align: center;"> <img src="johan216a.github.io/img/xXxReturnofXanderCage2017.jpg" style="width:35px;height:60px;"> </td>  <td> xXx: Return of Xander Cage (2017) <br> D.J. Caruso <br> Rich Wilkes, F. Scott Frazier </td>  </tr>');
+fn11();//?!
+
+function fn11() {
+  var arr = filterItems(document.getElementById("inp11").value);  //alert( document.getElementById("inp11").value );
+  var str = '<tbody><tr>  <th> </th>  <th> film director writer cast </th>  </tr>';
+  for (var i = 0; i < arr.length; i++) {     str += arr[i];  }
+  document.getElementById("tb00").innerHTML = str + '</tbody>';
+}
+function filterItems(query) {
+  return data00.filter((el) =>  el.toLowerCase().indexOf(query.toLowerCase()) > -1  )
+}
+</script>
 
 </body>
-</html> 
+</html>
