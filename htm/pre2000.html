@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head> <meta charset="UTF-8">
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 90%; }
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px; }
+</style>
+</head>
+<body>
+
+<p> Textfilter <input type="text" id="inp11" onkeyup="fn11()"> </p>
+<table id="tb00">    </table>
+
+<script>
+var data00 = [];
+
+data00.push('<tr>  <td style="text-align: center;"> <img src="res/pre00/PrttWmn.jpg" style="width:35px;height:60px;"> </td>  <td> Pretty Woman (1990) </td>  </tr>');
+data00.push('<tr>  <td style="text-align: center;"> <img src="res/pre00/ThSlncfthLmbs.jpg" style="width:35px;height:60px;"> </td>  <td> The Silence of the Lambs (1991) </td>  </tr>');
+
+fn11();//?!
+
+function fn11() {
+  var arr = filterItems(document.getElementById("inp11").value);  //alert( document.getElementById("inp11").value );
+  var str = '<tbody><tr>  <th> </th>  <th> film director writer cast </th>  </tr>';
+  for (var i = 0; i < arr.length; i++) {     str += arr[i];  }
+  document.getElementById("tb00").innerHTML = str + '</tbody>';
+}
+function filterItems(query) {
+  return data00.filter((el) =>  el.toLowerCase().indexOf(query.toLowerCase()) > -1  )
+}
+</script>
+
+</body>
+</html>
