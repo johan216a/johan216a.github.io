@@ -75,7 +75,7 @@ fn11();//?!
 
 function fn11() {
   var arr = filterItems(document.getElementById("inp11").value);  //alert( document.getElementById("inp11").value );
-  var str = '<tbody><tr>  <th> </th>  <th> film director writer cast </th>  </tr>';
+  var str = '<tbody><tr>  <th> </th>  <th> film director-writer cast </th>  </tr>';
   for (var i = 0; i < arr.length; i++) {     str += arr[i];  }
   document.getElementById("tb00").innerHTML = str + '</tbody>';
 }
